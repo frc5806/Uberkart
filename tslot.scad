@@ -8,7 +8,7 @@ module tslot(length,size=1,thickness=0.075,gap=0.25,center=false) {
                 [0,0], [0,start],[size/2-thickness-start,size/2-thickness],[gap/2,size/2-thickness],[gap/2,size/2],
                 [size/2,size/2],[size/2,gap/2],[size/2-thickness,gap/2],[size/2-thickness,size/2-thickness-start],[start,0]
             ]); square(gap+thickness,center=true);
-        } circle(r=gap/2,center=true,$fn=100);
+        } circle(r=gap/2,center=true,$fn=20);
     }
 }
 
@@ -21,7 +21,7 @@ module quadslot(length,size=1,thickness=0.075,gap=0.25,center=false) {
                     [0,0], [0,start],[size/2-thickness-start,size/2-thickness],[gap/2,size/2-thickness],[gap/2,size/2],
                     [size/2,size/2],[size/2,gap/2],[size/2-thickness,gap/2],[size/2-thickness,size/2-thickness-start],[start,0]
                 ]); square(gap+thickness,center=true);
-            } circle(r=gap/2,center=true,$fn=100);
+            } circle(r=gap/2,center=true,$fn=20);
         }
     }
 }
