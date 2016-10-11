@@ -5,9 +5,12 @@ tsize = 1;
 shelf_height = 6;
 robot_height = 22;
 desk_height = 40;
+desk_length = 12;
 
 width = 22;
 length = 30;
+
+color([0.4,1,0]) translate([10,-20,0]) rotate([0,0,180]) scale(0.38) import("person.stl");
 
 
 ////////////////////////////
@@ -97,6 +100,16 @@ module batteryShelf() {
     color([1,0,0]) translate([-tsize,tsize,-0.25]) cube([width,10,0.25]);
 }
 
+module desk() {
+    translate([tsize,0,desk_height-tsize]) rotate([0,90,0]) quadslot(width-tsize*4);
+
+    translate([0,-tsize,desk_height-tsize]) rotate([90,0,0]) quadslot(desk_length-2*tsize);
+
+    translate([width-2*tsize,-tsize,desk_height-tsize]) rotate([90,0,0]) quadslot(desk_length-2*tsize);
+
+    color([0,1,1]) translate([-tsize,tsize-desk_length,desk_height]) cube([width,desk_length,0.25]);
+}
+
 module renderCart() {
     frame();
     sidePanels();
@@ -104,6 +117,7 @@ module renderCart() {
     tote();
     batteries();
     batteryShelf();
+    desk();
 }
 
-renderCart();
+translate([0,0,3]) renderCart();

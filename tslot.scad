@@ -24,4 +24,5 @@ module quadslot(length,size=1,thickness=0.075,gap=0.25,center=false) {
             } circle(r=gap/2,center=true,$fn=20);
         }
     }
+    echo(length);
 }
